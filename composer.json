@@ -1,0 +1,19 @@
+{
+    "name": "eab/inlinepdfbundle",
+    "description": "eZ Publish Bundle for displaying PDFs inline with friendly URLs",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Enterprise AB Ltd",
+            "email": "admin@eab.uk"
+        }
+    ],
+    "require": {
+        "ezsystems/ezpublish-kernel": "~5.4|>=2014.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eab\\InlinePdfBundle\\": ""
+        }
+    }
+}

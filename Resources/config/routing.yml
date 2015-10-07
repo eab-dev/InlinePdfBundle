@@ -1,0 +1,6 @@
+inline_pdf_view:
+    path: /{path}.pdf
+    requirements:
+        path: "^(?!content).+"
+    defaults:
+        _controller: EabInlinePdfBundle:View:view
