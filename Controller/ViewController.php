@@ -3,6 +3,7 @@
 namespace Eab\InlinePdfBundle\Controller;
 
 use eZ\Bundle\EzPublishCoreBundle\Controller;
+use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use eZ\Publish\Core\FieldType\BinaryFile;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -21,7 +22,13 @@ class ViewController extends Controller
         $repository = $this->getRepository();
         $urlAliasService = $repository->getURLAliasService();
         $contentUri = dirname( $path );
-        $locationID = $urlAliasService->lookup( $contentUri )->destination;
+
+        try {
+            $locationID = $urlAliasService->lookup( $contentUri )->destination;
+        } catch ( NotFoundException $e ) {
+            // Convert a 500 error into a 404
+            throw $this->createNotFoundException();
+        }
 
         try {
             $locationService = $repository->getLocationService();
