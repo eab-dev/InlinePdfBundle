@@ -34,7 +34,9 @@ Example of generating the URL in a template:
 
 ##Install
 
-1. Download the bundle to `src/Eab/InlinePdfBundle`.
+1. Download the bundle to `src/Eab/InlinePdfBundle` or use composer:
+
+        composer require --update-no-dev --prefer-dist eab/inline-pdf-bundle
 
 2. Edit `registerBundles()` in `ezpublish/EzPublishKernel.php` and add the following:
 

@@ -1,5 +1,5 @@
 {
-    "name": "eab/inlinepdfbundle",
+    "name": "eab/inline-pdf-bundle",
     "description": "eZ Publish Bundle for displaying PDFs inline with friendly URLs",
     "license": "GPL-2.0",
     "authors": [
